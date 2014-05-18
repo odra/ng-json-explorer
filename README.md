@@ -16,7 +16,7 @@ Including the required files (js and css)
 <link rel="stylesheet" type="text/css" media="screen" href="../src/gd-ui-jsonexplorer.css" />
 ```
 
-Send the json data to your template
+Sending the json data to your template
 -------------------------
 ```
 $scope.data = {
@@ -40,4 +40,10 @@ Using the directive to display the data
 -------------------------
 ```
 <json-explorer json-data="{{data}}"></json-explorer>
+```
+
+Using the directive to display the data from a URL (will execute a GET request)
+-------------------------
+```
+<json-explorer json-url="http://myurl.com"></json-explorer>
 ```
