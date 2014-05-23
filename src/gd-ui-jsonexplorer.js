@@ -132,7 +132,7 @@ angular.module('gd.ui.jsonexplorer', [])
 				};
 				
 				formatter.valueToHtml = function (value) {
-					var type = value && value.constructor;
+					var type = (value != null) && value.constructor;
 					var output = '';
 
 					if (value == null) {
