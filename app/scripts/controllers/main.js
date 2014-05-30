@@ -9,6 +9,7 @@ angular.module('ngJsonExplorerApp')
 	];
 	$scope.data = {
 				'name': 'Json Explorer',
+				'empty_string': '',
 				'qty': 10,
 				'has_data': true,
 				'null_data': null,
