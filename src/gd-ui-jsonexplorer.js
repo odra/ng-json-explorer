@@ -28,7 +28,8 @@ angular.module('gd.ui.jsonexplorer', [])
 		restrict: 'E',
 		scope: {
 			jsonData: '@',
-			jsonUrl: '@'
+			jsonUrl: '@',
+			collapsed: '@'
 		},
 		link: function (scope, elem, attrs) {
 			attrs.$observe('jsonUrl', function (val) {
@@ -40,6 +41,7 @@ angular.module('gd.ui.jsonexplorer', [])
 				}
 			});
 			attrs.$observe('jsonData', function (val) {
+				var collapsed = attrs.collapsed == 'true' ? true : false;
 				var output = '';
 				var formatter = {};
 				formatter.jsString = function (s) {
@@ -95,7 +97,12 @@ angular.module('gd.ui.jsonexplorer', [])
     				}
     
     				if (hasContents) {
-      					output = '[<ul class="array collapsible">' + output + '</ul>]';
+    					if (collapsed) {
+    						output = '[<ul class="array collapsible" style="display:none;">' + output + '</ul><span class="ellipsis">...</span>]';
+    					} else {
+    						output = '[<ul class="array collapsible">' + output + '</ul><span style="display:none" class="ellipsis">...</span>]';
+    					}
+      					
     				} else {
       					output = '[ ]';
     				}
@@ -123,7 +130,15 @@ angular.module('gd.ui.jsonexplorer', [])
     				}
     
 	    			if (hasContents) {
-	      				output = '{<ul class="obj collapsible">' + output + '</ul>}';
+	    				if (collapsed) {
+	    					if (JSON.stringify(json) != val) {
+	    						output = '{<ul class="obj collapsible" style="display:none;">' + output + '</ul><span class="ellipsis">...</span>}';
+	    					} else {
+	    						output = '{<ul class="obj">' + output + '</ul><span style="display:none" class="ellipsis">...</span>}';
+	    					}
+	      				} else {
+	      					output = '{<ul class="obj collapsible">' + output + '</ul>}';
+	      				}
 	    			} else {
 	      				output = '{ }';
 	    			}
@@ -176,24 +191,22 @@ angular.module('gd.ui.jsonexplorer', [])
 				function collapse (evt) {
 					var collapser = evt.target;
     				var target = collapser.parentNode.getElementsByClassName('collapsible');
-    
+
     				if (!target.length) {
       					return;
     				}
 
     				target = target[0];
 
+    				var ellipsis = target.parentNode.getElementsByClassName('ellipsis')[0];
     				if (target.style.display == 'none') {
-				      var ellipsis = target.parentNode.getElementsByClassName('ellipsis')[0];
-				      target.parentNode.removeChild(ellipsis);
+				      angular.element(target).next()[0].style.display = 'none';
 				      target.style.display = '';
 				      collapser.innerHTML = '-';
     				} else {
+    					angular.element(target).next()[0].style.display = '';
+
     				  target.style.display = 'none';
-				   	  var ellipsis = document.createElement('span');
-				      ellipsis.className = 'ellipsis';
-				      ellipsis.innerHTML = ' &hellip; ';
-				      target.parentNode.insertBefore(ellipsis, target);
 				      collapser.innerHTML = '+';
     				}
 				}
@@ -205,7 +218,11 @@ angular.module('gd.ui.jsonexplorer', [])
 						if (collectionItem.parentNode.nodeName == 'LI') {
 							var collapser = document.createElement('div');
 							collapser.className = 'collapser';
-							collapser.innerHTML = '-';
+							if (collapsed) {
+								collapser.innerHTML = '+';
+							} else {
+								collapser.innerHTML = '-';
+							}
 							collapser.addEventListener('click', collapse, false);
 							collectionItem.parentNode.insertBefore(collapser, collectionItem.parentNode.firstChild);
 						}						

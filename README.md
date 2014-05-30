@@ -42,8 +42,13 @@ Using the directive to display the data
 <json-explorer json-data="{{data}}"></json-explorer>
 ```
 
-Using the directive to display the data from a URL (will execute a GET request)
+Using the directive to display the data from a URL
 -------------------------
 ```
 <json-explorer json-url="http://myurl.com"></json-explorer>
+```
+Using the collapsed attribute
+-------------------------
+```
+<json-explorer json-data="{{data}}" collapsed="true"></json-explorer>
 ```
