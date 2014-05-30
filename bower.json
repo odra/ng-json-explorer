@@ -2,6 +2,7 @@
   "name": "ng-json-explorer",
   "version": "0.1.1",
   "main": ["src/gd-ui-jsonexplorer.css", "src/gd-ui-jsonexplorer.js"],
+  "homepage": "https://github.com/Goldark/ng-json-explorer",
   "ignore": [
     ".jshintrc",
     "**/*.txt",
