@@ -200,12 +200,10 @@ angular.module('gd.ui.jsonexplorer', [])
 
     				var ellipsis = target.parentNode.getElementsByClassName('ellipsis')[0];
     				if (target.style.display == 'none') {
-				      angular.element(target).next()[0].style.display = 'none';
 				      target.style.display = '';
 				      collapser.innerHTML = '-';
     				} else {
-    					angular.element(target).next()[0].style.display = '';
-
+    				
     				  target.style.display = 'none';
 				      collapser.innerHTML = '+';
     				}
