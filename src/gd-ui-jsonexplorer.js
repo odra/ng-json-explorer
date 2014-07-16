@@ -23,7 +23,7 @@ This module is based in the firefox jsonview extension made by Ben Hollis: https
 'use strict';
 
 angular.module('gd.ui.jsonexplorer', [])
-.directive('jsonExplorer', function ($http) {
+.directive('jsonExplorer', ['$http', function ($http) {
 	return {
 		restrict: 'E',
 		scope: {
@@ -229,4 +229,4 @@ angular.module('gd.ui.jsonexplorer', [])
 			});
       	}
     }
-});
+}]);
