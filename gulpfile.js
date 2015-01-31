@@ -1,30 +1,40 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var nodemon = require('gulp-nodemon')
+var open = require('gulp-open');
+var license = require('gulp-license');
 
-gulp.task('default', function() {
-    gulp.src(['./src/ng-json-explorer.js'])
-    .pipe(concat('ng-json-explorer.min.js'))
-    .pipe(gulp.dest('./dist/js'));
+function isArray (arr) {
+	return typeof path == 'object' && path.hasOwnProperty('length');
+}
 
-    gulp.src(['./src/ng-json-explorer.css'])
-    .pipe(concat('ng-json-explorer.min.css'))
-    .pipe(gulp.dest('./dist/css'));
+function genFile (path, filename, shouldUglify, dist) {
+	var fileList = [];
+	if (isArray(path)) {
+		fileList = path;
+	} else {
+		fileList.push(path);
+	}
+	var file = gulp.src(fileList);
+	if (shouldUglify) {
+		file
+		.pipe(concat(filename.replace('.js', '.min.js')))
+		.pipe(uglify())
+		.pipe(gulp.dest(dist));
+	}
+	file
+	.pipe(concat(filename))
+	.pipe(gulp.dest(dist));
+}
 
-    gulp.src(['./src/index.html'])
-    .pipe(concat('index.html'))
-    .pipe(gulp.dest('./dist'));
-
-    gulp.src(['./src/app.js'])
-    .pipe(concat('app.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/js'));
-
-    gulp.src(['./src/data.js'])
-    .pipe(concat('data.js'))
-    .pipe(gulp.dest('./dist/js'));
-
-    gulp.src(['./bower_components/angularjs/angular.min.js'])
-    .pipe(gulp.dest('./dist/libs/js'));
+gulp.task('build', function () {
+    genFile('./src/angular-json-explorer.js', 'angular-json-explorer.js', true, './dist');
+    genFile('./src/angular-json-explorer.css', 'angular-json-explorer.css', false, './dist');
 });
+
+gulp.task('run', function () {
+	gulp.src('./demo/demo.html')
+	.pipe(open('<%file.path%>'));
+});
+
+gulp.task('default', ['build', 'run']);

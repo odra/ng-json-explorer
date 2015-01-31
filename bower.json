@@ -1,15 +1,14 @@
 {
-  "name": "ng-json",
-  "version": "1.0.0",
+  "name": "ng-json-explorer",
+  "version": "1.1.0",
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-    "angularjs": "~1.2.20",
+    "angularjs": "~1.2.20"
   }
 }

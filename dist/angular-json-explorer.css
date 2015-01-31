@@ -1,5 +1,5 @@
-/*!
-Copyright (c) 2013, Goldark
+/*
+Copyright (c) 2013, Goldark <opensource@goldark.com.br>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -26,35 +26,33 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 */
-
-.ng-json-explorer .hidden {
+.angular-json-explorer .hidden {
 	display: none;
 }
 
-.ng-json-explorer .prop {
+.angular-json-explorer .prop {
 	font-weight: bold;
 }
 
-.ng-json-explorer .null {
+.angular-json-explorer .null {
 	color: red;
 }
 
-.ng-json-explorer .bool {
+.angular-json-explorer .bool {
 	color: blue;
 }
 
-.ng-json-explorer .num {
+.angular-json-explorer .num {
 	color: blue;
 }
 
-.ng-json-explorer .string {
+.angular-json-explorer .string {
 	color: green;
 	white-space: pre-wrap;
 }
 
-.ng-json-explorer .collapser {
+.angular-json-explorer .collapser {
 	position: absolute;
 	left: -1em;
 	cursor: pointer;
@@ -63,17 +61,17 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	text-decoration: none;
 }
 
-.ng-json-explorer .q {
+.angular-json-explorer .q {
 	display: inline-block;
 	width: 0px;
 	color: transparent;
 }
 
-.ng-json-explorer li {
+.angular-json-explorer li {
 	position: relative;
 }
 
-.ng-json-explorer .error {
+.angular-json-explorer .error {
 	-moz-border-radius: 8px;
 	border: 1px solid #970000;
 	background-color: #F7E8E8;
@@ -81,31 +79,31 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	padding: .5em;
 }
 
-.ng-json-explorer .errormessage {
+.angular-json-explorer .errormessage {
 	font-family: monospace;
 }
 
-.ng-json-explorer {
+.angular-json-explorer {
 	font-family: monospace;
 	font-size: 1.1em;
 	white-space: pre-wrap;
 }
 
-.ng-json-explorer ul {
+.angular-json-explorer ul {
 	list-style: none;
 	margin: 0 0 0 2em;
 	padding: 0;
 }
 
-.ng-json-explorer h1 {
+.angular-json-explorer h1 {
 	font-size: 1.2em;
 }
 
-.ng-json-explorer .callback + #json {
+.angular-json-explorer .callback + #json {
 	padding-left: 1em;
 }
 
-.ng-json-explorer .callback {
+.angular-json-explorer .callback {
 	font-family: monospace;
 	color: #A52A2A;
 }
