@@ -15,7 +15,7 @@ Installation
 bower install ng-json
 ```
 
-Module depency
+Module dependency
 -------------------------
 ```
 angular
