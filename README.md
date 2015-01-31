@@ -15,6 +15,13 @@ Installation
 bower install ng-json
 ```
 
+Module depency
+-------------------------
+```
+angular
+.module('app', ['ngJsonExplorer'])
+```
+
 Files to be used in production are located in the folder "ng-json-explorer/dist"
 
 Including the required files (js and css)
