@@ -2,10 +2,10 @@
   "name": "ng-json-explorer",
   "version": "1.1.0",
   "license": "MIT",
-  "main": 
-  [ "dist/angular-json-explorer.js"
-  , "dist/angular-json-explorer.css"
-  ]
+  "main": [
+      "dist/angular-json-explorer.js",
+      "dist/angular-json-explorer.css"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
