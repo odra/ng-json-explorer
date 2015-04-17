@@ -41,7 +41,7 @@ angular.module('ngJsonExplorer', [])
 		link: function (scope, elem, attrs) {
 			if (!angular.isBoolean) {
 				angular.isBoolean = function (value) {
-					return typeof value == Boolean;
+				    return  value === true || value === false || toString.call(value) == '[object Boolean]' || typeof value === 'boolean';
 				}
 			}
 			var collapser = '+';
@@ -221,7 +221,7 @@ angular.module('ngJsonExplorer', [])
 				if (val) {
 					parse(val);
 				}
-			});
+			}, true);
 
 			scope.$watch('requestData', function (val) {
 				if (val) {
