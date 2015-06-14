@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
 	"directory": "demo/libs"
+=======
+    "directory": "app/bower_components"
+>>>>>>> 1cb01430700384227e9bf83d35d532b236d1bf06
 }

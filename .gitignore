@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 bower_components
 .tmp
 node_modules
+=======
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+>>>>>>> 1cb01430700384227e9bf83d35d532b236d1bf06
