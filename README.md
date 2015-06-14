@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 # ng-json-explorer
+=======
+ng-json-explorer
+================
+>>>>>>> 1cb01430700384227e9bf83d35d532b236d1bf06
 
 Simple json explorer angular directive that uses raw json data as source.
 
 This module is based in the firefox jsonview extenrsion made by Ben Hollis: https://github.com/bhollis/jsonview/
 
+<<<<<<< HEAD
 ## Usage
 
 Check the demo folder (demo/demo.html) for examples.
@@ -46,10 +52,40 @@ $scope.data = {
 	],
 	"obj": {
 		"hello": "world"
+=======
+Usage
+-------------------------
+Check the demo folder (demo.html) for a simple example.
+
+Including the required files (js and css)
+-------------------------
+```
+<script src="gd-ui-jsonexplorer.js"></script> 
+<link rel="stylesheet" type="text/css" media="screen" href="../src/gd-ui-jsonexplorer.css" />
+```
+
+Sending the json data to your template
+-------------------------
+```
+$scope.data = {
+	'name': 'Json Explorer',
+	'qty': 10,
+	'has_data': true,
+	'arr': [
+		10,
+		'str',
+		{
+			'nested': 'object'
+		}
+	],
+	'obj': {
+		'hello': 'world'
+>>>>>>> 1cb01430700384227e9bf83d35d532b236d1bf06
 	}
 };
 ```
 
+<<<<<<< HEAD
 ## Using the directive to display the data
 
 ```html
@@ -67,3 +103,21 @@ $scope.data = {
 ```html
 <json-explorer json-data="{{data}}" collapsed="true"></json-explorer>
 ```
+=======
+Using the directive to display the data
+-------------------------
+```
+<json-explorer json-data="{{data}}"></json-explorer>
+```
+
+Using the directive to display the data from a URL
+-------------------------
+```
+<json-explorer json-url="http://myurl.com"></json-explorer>
+```
+Using the collapsed attribute
+-------------------------
+```
+<json-explorer json-data="{{data}}" collapsed="true"></json-explorer>
+```
+>>>>>>> 1cb01430700384227e9bf83d35d532b236d1bf06
