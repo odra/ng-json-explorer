@@ -12,7 +12,7 @@ angular.module('ngJsonExplorer', [])
 		link: function (scope, elem, attrs) {
 			if (!angular.isBoolean) {
 				angular.isBoolean = function (value) {
-					return typeof value == Boolean;
+					return typeof value == 'boolean';
 				}
 			}
 			var collapser = '+';
