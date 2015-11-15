@@ -53,17 +53,17 @@ $scope.data = {
 ## Using the directive to display the data
 
 ```html
-<json-explorer json-data="{{data}}"></json-explorer>
+<json-explorer data="{{data}}"></json-explorer>
 ```
 
 ## Using the directive to display the data from a URL
 
 ```html
-<json-explorer json-url="http://myurl.com"></json-explorer>
+<json-explorer url="http://myurl.com"></json-explorer>
 ```
 
 ## Using the collapsed attribute
 
 ```html
-<json-explorer json-data="{{data}}" collapsed="true"></json-explorer>
+<json-explorer data="{{data}}" collapsed="true"></json-explorer>
 ```
