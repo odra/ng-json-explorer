@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<script src="libs/angular/angular.js"></script>
-		<script src="../dist/angular-json-explorer.js"></script>
+		<script src="../dist/angular-json-explorer.min.js"></script>
 		<link rel="stylesheet" type="text/css" media="all" href="../dist/angular-json-explorer.css" />
 		<script>
 			angular
@@ -29,6 +29,7 @@
 						'hello': 'world'
 					}
 				};
+				$scope.json2 = $scope.json;
 			}]);
 		</script>
 	</head>
@@ -39,7 +40,7 @@
 			<json-explorer url="url"></json-explorer>
 			<hr />
 			<a href ng-click="toggle()">toggle</a>
-			<json-explorer json-data="json" collapsed="collapsed"></json-explorer>
+			<json-explorer json-data="json2" collapsed="collapsed"></json-explorer>
 		</div>
 	</body>
 </html>
