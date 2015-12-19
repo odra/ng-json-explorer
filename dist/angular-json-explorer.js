@@ -5,6 +5,7 @@ angular.module('ngJsonExplorer', [])
 		restrict: 'E',
 		scope: {
 			data: '=',
+			jsonData: '=',
 			url: '=',
 			collapsed: '=',
 			sortBy: '='
@@ -91,7 +92,7 @@ angular.module('ngJsonExplorer', [])
 				return html;
 			};
 			var html = '';
-			function parse(val) {
+			function parse (val) {
 				var data = null;
 				if (!angular.isObject(val)) {
 					try {
@@ -188,11 +189,22 @@ angular.module('ngJsonExplorer', [])
 				}
 			});
 
-			scope.$watch('data', function (val) {
+			scope.$watch('[data, jsonData]', function (v) {
+				if (v[0]) {
+					parse(v[0]);
+					return;
+				}
+				if (v[1]) {
+					parse(v[1]);
+					return;
+				}
+			}, true);
+			
+			/*scope.$watch('data', function (val) {
 				if (val) {
 					parse(val);
 				}
-			});
+			});*/
 
 			scope.$watch('requestData', function (val) {
 				if (val) {
