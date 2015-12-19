@@ -10,7 +10,8 @@ The directive has the following properties:
 - **data:** json content to be displayed (needs to be and object or array);
 - **json-data:** alias for data
 - **url:** An string url to be fetched (HTTP GET) or an object to be used by $http service;
--  **collapsed:** a boolean value to collapse (or not) objects/arrays content when the data is loaded/parsed.
+-  **collapsed:** a boolean value to collapse (or not) objects/arrays content when the data is loaded/parsed;
+-  **sort-by**: a field to used as reference to order the json data (should be an array): sort-by="counter:asc" or sort-by="name:desc".
 
 ## Styling
 
