@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 # ng-json-explorer
-=======
-ng-json-explorer
-================
->>>>>>> 1cb01430700384227e9bf83d35d532b236d1bf06
 
 Simple json explorer angular directive that uses raw json data as source.
 
@@ -52,7 +47,6 @@ $scope.data = {
 	],
 	"obj": {
 		"hello": "world"
-=======
 Usage
 -------------------------
 Check the demo folder (demo.html) for a simple example.
@@ -85,17 +79,16 @@ $scope.data = {
 };
 ```
 
-<<<<<<< HEAD
 ## Using the directive to display the data
 
 ```html
-<json-explorer json-data="{{data}}"></json-explorer>
+<json-explorer data="{{data}}"></json-explorer>
 ```
 
 ## Using the directive to display the data from a URL
 
 ```html
-<json-explorer json-url="http://myurl.com"></json-explorer>
+<json-explorer url="http://myurl.com"></json-explorer>
 ```
 
 ## Using the collapsed attribute
@@ -103,7 +96,6 @@ $scope.data = {
 ```html
 <json-explorer json-data="{{data}}" collapsed="true"></json-explorer>
 ```
-=======
 Using the directive to display the data
 -------------------------
 ```
@@ -120,4 +112,3 @@ Using the collapsed attribute
 ```
 <json-explorer json-data="{{data}}" collapsed="true"></json-explorer>
 ```
->>>>>>> 1cb01430700384227e9bf83d35d532b236d1bf06
