@@ -80,6 +80,7 @@ Using the directive to display the data
 
 Using the directive to display the data from a URL
 -------------------------
+
 ```
 <json-explorer url="http://myurl.com"></json-explorer>
 ```
