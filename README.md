@@ -4,7 +4,6 @@ Simple json explorer angular directive that uses raw json data as source.
 
 This module is based in the firefox jsonview extenrsion made by Ben Hollis: https://github.com/bhollis/jsonview/
 
-<<<<<<< HEAD
 ## Usage
 
 Check the demo folder (demo/demo.html) for examples.
