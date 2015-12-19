@@ -199,12 +199,6 @@ angular.module('ngJsonExplorer', [])
 					return;
 				}
 			}, true);
-			
-			/*scope.$watch('data', function (val) {
-				if (val) {
-					parse(val);
-				}
-			});*/
 
 			scope.$watch('requestData', function (val) {
 				if (val) {
