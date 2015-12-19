@@ -9,6 +9,13 @@
 			.module('demo', ['ngJsonExplorer'])
 			.controller('DemoCtrl', ['$scope', function ($scope) {
 				$scope.url = 'data.js';
+				$scope.http = {
+					method: 'GET',
+					url: 'data.js',
+					headers: {
+						'X-Custom-Header': 'my custom header'
+					}
+				};
 				$scope.collapsed = true;
 				$scope.toggle = function() {
 					$scope.collapsed = !$scope.collapsed;
@@ -38,6 +45,8 @@
 			<json-explorer data="json"></json-explorer>
 			<hr />
 			<json-explorer url="url"></json-explorer>
+			<hr />
+			<json-explorer url="http"></json-explorer>
 			<hr />
 			<a href ng-click="toggle()">toggle</a>
 			<json-explorer json-data="json2" collapsed="collapsed"></json-explorer>

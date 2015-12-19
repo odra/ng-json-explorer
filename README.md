@@ -4,13 +4,26 @@ Simple json explorer angular directive that uses raw json data as source.
 
 This module is based in the firefox jsonview extenrsion made by Ben Hollis: https://github.com/bhollis/jsonview/
 
+## Properties
+The directive has the following properties:
+
+- **data:** json content to be displayed (needs to be and object or array);
+- **json-data:** alias for data
+- **url:** An string url to be fetched (HTTP GET) or an object to be used by $http service;
+-  **collapsed:** a boolean value to collapse (or not) objects/arrays content when the data is loaded/parsed.
+
+## Styling
+
+Check src/angular-json-explorer.css
+
+
 ## Usage
 
 Check the demo folder (demo/demo.html) for examples.
 
 ## Installation
 
-```
+```sh
 bower install ng-json-explorer
 ```
 
@@ -48,45 +61,44 @@ $scope.data = {
 		"hello": "world"
 ```
 
-Usage
--------------------------
+### Usage
+
 Check the demo folder (demo.html) for a simple example.
 
-## Using the directive to display the data (you can use either "json-data" or "data")
+### Using the directive to display the data (you can use either "json-data" or "data")
 
 ```html
 <json-explorer json-data="data"></json-explorer>
 <json-explorer data="data"></json-explorer>
 ```
 
-## Using the directive to display the data from a URL
+### Using the directive to display the data from a URL
 
 ```html
 <json-explorer url="http://myurl.com"></json-explorer>
 ```
 
-## Using the collapsed attribute
+### Using the collapsed attribute
 
 ```html
 <json-explorer json-data="data" collapsed="true"></json-explorer>
 <json-explorer data="data" collapsed="true"></json-explorer>
 ```
-Using the directive to display the data
--------------------------
-```
+### Using the directive to display the data
+
+```html
 <json-explorer json-data="data"></json-explorer>
 <json-explorer data="data"></json-explorer>
 ```
 
-Using the directive to display the data from a URL
--------------------------
+### Using the directive to display the data from a URL
 
-```
+```html
 <json-explorer url="http://myurl.com"></json-explorer>
 ```
-Using the collapsed attribute
--------------------------
-```
+### Using the collapsed attribute
+
+```html
 <json-explorer json-data="data" collapsed="true"></json-explorer>
 <json-explorer data="data" collapsed="true"></json-explorer>
 ```

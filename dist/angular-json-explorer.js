@@ -182,7 +182,13 @@ angular.module('ngJsonExplorer', [])
 
 			scope.$watch('url', function (val) {
 				if (val) {
-					$http.get(val)
+					var http;
+					if (angular.isString(val)) {
+						 http = $http.get(val);
+					} else {
+						http = $http(val); 
+					}
+					http
 					.success(function (response) {
 						scope.requestData = response;
 					});
