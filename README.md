@@ -60,6 +60,8 @@ $scope.data = {
 	],
 	"obj": {
 		"hello": "world"
+	}
+}
 ```
 
 ### Usage
