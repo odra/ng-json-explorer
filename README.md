@@ -46,6 +46,8 @@ $scope.data = {
 	],
 	"obj": {
 		"hello": "world"
+```
+
 Usage
 -------------------------
 Check the demo folder (demo.html) for a simple example.
