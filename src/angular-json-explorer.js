@@ -123,6 +123,7 @@ angular.module('ngJsonExplorer', [])
 								method = orderByNumber;
 							} else if (aField.hasOwnProperty('length') && bField.hasOwnProperty('length')) {
 								method = orderByLength;
+
 							} else {
 								return;
 							}

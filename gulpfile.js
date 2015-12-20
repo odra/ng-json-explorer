@@ -4,7 +4,9 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var open = require('gulp-open');
-var license = require('gulp-license');
+var connect = require('gulp-connect');
+var minifyCss = require('gulp-minify-css');
+var open = require('gulp-open');
 
 function isArray (arr) {
   return typeof path == 'object' && path.hasOwnProperty('length');
@@ -29,16 +31,43 @@ function genFile (path, filename, shouldUglify, dist) {
     .pipe(gulp.dest(dist));
 }
 
-gulp.task('build', function () {
-    genFile('./src/angular-json-explorer.js', 'angular-json-explorer.js', true, './dist');
-    genFile('./src/angular-json-explorer.css', 'angular-json-explorer.css', false, './dist');
+gulp.task('dev', function () {
+  gulp
+    .src(['./src/angular-json-explorer.js', './src/angular-json-explorer.css'])
+    .pipe(gulp.dest('./dist'))
+    .pipe(connect.reload({port: 5000}));
+});
+
+gulp.task('dist', function () {
+  gulp
+    .src('./src/angular-json-explorer.js')
+    .pipe(uglify())
+    .pipe(concat('angular-json-explorer.min.js'))
+    .pipe(gulp.dest('./dist'));
+
+  gulp
+    .src('./src/angular-json-explorer.css')
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(concat('angular-json-explorer.min.css'))
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('watch', function () {
+  gulp.watch('./src/**/*', ['dev', 'dist']);
 });
 
 gulp.task('run', function () {
-
-  gulp
-    .src('./demo/demo.html')
-    .pipe(open());
+  connect.server({
+    root: ['demo', 'dist'],
+    port: 5000,
+    livereload: true
+  });
 });
 
-gulp.task('default', ['build', 'run']);
+gulp.task('open', function () {
+  gulp
+    .src(__filename)
+    .pipe(open({uri: 'http://127.0.0.1:5000'}));
+});
+
+gulp.task('default', ['dev', 'run', 'watch', 'open']);
