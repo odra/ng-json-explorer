@@ -20,7 +20,7 @@ Check src/angular-json-explorer.css
 
 ## Usage
 
-Check the demo folder (demo/demo.html) for examples.
+Check the demo folder (demo/index.html) for examples.
 
 ## Installation
 
@@ -66,7 +66,7 @@ $scope.data = {
 
 ### Usage
 
-Check the demo folder (demo.html) for a simple example.
+Check the demo folder (demo/index.html) for a simple example.
 
 ### Using the directive to display the data (you can use either "json-data" or "data")
 
