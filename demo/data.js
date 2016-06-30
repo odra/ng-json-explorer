@@ -15,6 +15,7 @@
     "phone": "+1 (813) 412-3935",
     "address": "632 Madoc Avenue, Woodburn, Minnesota, 2232",
     "about": "Mollit elit dolore aliqua laborum elit. Eu commodo labore non cupidatat. Labore esse amet amet in aliquip ullamco incididunt sunt veniam laborum. Anim tempor est irure veniam. Minim enim eiusmod proident irure.\r\n",
+    "html": "<html><h1>This is HTML</h1></html>",
     "registered": "2014-10-26T10:19:03 +02:00",
     "latitude": -54.780526,
     "longitude": -172.80744,
