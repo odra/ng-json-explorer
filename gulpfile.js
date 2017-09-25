@@ -5,7 +5,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var open = require('gulp-open');
 var connect = require('gulp-connect');
-var minifyCss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var open = require('gulp-open');
 
 function isArray (arr) {
@@ -47,7 +47,7 @@ gulp.task('dist', function () {
 
   gulp
     .src('./src/angular-json-explorer.css')
-    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(concat('angular-json-explorer.min.css'))
     .pipe(gulp.dest('./dist'));
 });

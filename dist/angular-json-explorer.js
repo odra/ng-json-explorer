@@ -33,13 +33,16 @@ angular.module('ngJsonExplorer', [])
 			var isObject = function (v) {
 				return angular.isObject(v);
 			};
+			var escape = function (v) {
+				return v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+			}
 			var parseRaw = function (k, v) {
 				var key = '';
 				if (k) {
 					key = '<span class="prop>">' + k + '</span>: ';
 				}
 				if (typeof v == 'string') {
-					return key + '<span class="string">"' + v + '"</span>';
+					return key + '<span class="string">"' + escape(v) + '"</span>';
 				}
 				if (typeof v == 'number') {
 					return key + '<span class="num">' + v + '</span>';
@@ -190,7 +193,7 @@ angular.module('ngJsonExplorer', [])
 						http = $http(val); 
 					}
 					http
-					.success(function (response) {
+					.then(function (response) {
 						scope.requestData = response;
 					});
 				}

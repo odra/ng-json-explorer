@@ -193,7 +193,7 @@ angular.module('ngJsonExplorer', [])
 						http = $http(val); 
 					}
 					http
-					.success(function (response) {
+					.then(function (response) {
 						scope.requestData = response;
 					});
 				}
