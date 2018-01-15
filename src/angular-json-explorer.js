@@ -194,7 +194,7 @@ angular.module('ngJsonExplorer', [])
 					}
 					http
 					.then(function (response) {
-						scope.requestData = response;
+						scope.requestData = response.data;
 					});
 				}
 			});
