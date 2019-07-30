@@ -4,14 +4,14 @@
   "description": "Simple json explorer angular directive that uses raw json data as source.",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
     "gulp-concat": "^2.6.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-open": "^2.0.0",
-    "gulp-uglify": "^3.0.0"
-  },
-  "devDependencies": {
+    "gulp-uglify": "^3.0.0",
     "gulp-connect": "^5.0.0",
     "gulp-serve": "^1.4.0",
     "gulp-watch": "^4.3.11"
