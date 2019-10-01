@@ -1,6 +1,6 @@
 # ng-json-explorer
 
-** I AM NO LONGER MAINTAINING THIS PROJECT ** - please let me know if you would like to adopt it.
+**I AM NO LONGER MAINTAINING THIS PROJECT** - please let me know if you would like to adopt it.
 
 Simple json explorer angular directive that uses raw json data as source.
 
