@@ -1,60 +1,109 @@
-#ng-json-explorer
+# ng-json-explorer
+
+**I AM NO LONGER MAINTAINING THIS PROJECT** - please let me know if you would like to adopt it.
 
 Simple json explorer angular directive that uses raw json data as source.
 
-This module is inspired by the firefox jsonview extenrsion made by Ben Hollis: https://github.com/bhollis/jsonview/
+This module is based in the firefox jsonview extenrsion made by Ben Hollis: https://github.com/bhollis/jsonview/
 
-##Usage
+## Properties
+The directive has the following properties:
 
-Check the demo folder (demo.html) for a simple example.
+- **data:** json content to be displayed (needs to be and object or array);
+- **json-data:** alias for data
+- **url:** An string url to be fetched (HTTP GET) or an object to be used by $http service;
+-  **collapsed:** a boolean value to collapse (or not) objects/arrays content when the data is loaded/parsed;
+-  **sort-by**: a field to used as reference to order the json data (should be an array): sort-by="counter:asc" or sort-by="name:desc".
 
-#Including the required files (js and css)
+## Styling
+
+Check src/angular-json-explorer.css
+
+
+## Usage
+
+Check the demo folder (demo/index.html) for examples.
+
+## Installation
+
+```sh
+bower install ng-json-explorer
 ```
-<script src="ng-json-explorer.min.js"></script> 
-<link rel="stylesheet" type="text/css" media="screen" href="ng-json-explorer.min.css" />
+
+## Module dependency
+
+```js
+angular
+.module('app', ['ngJsonExplorer'])
 ```
 
-##Sending the json data to your template
+Files to be used in production are located in the folder "ng-json-explorer/dist"
+
+## Including the required files (js and css)
+
+```html
+<script src="angular-json-explorer.min.js"></script> 
+<link rel="stylesheet" type="text/css" media="screen" href="angular-json-explorer.css" />
 ```
+
+## Sending the json data to your template
+
+```js
 $scope.data = {
-	'name': 'Json Explorer',
-	'qty': 10,
-	'has_data': true,
-	'arr': [
+	"name": "Json Explorer",
+	"qty": 10,
+	"has_data": true,
+	"arr": [
 		10,
-		'str',
+		"str",
 		{
-			'nested': 'object'
+			"nested": "object"
 		}
 	],
-	'obj': {
-		'hello': 'world'
+	"obj": {
+		"hello": "world"
 	}
-};
+}
 ```
 
-##Usage
+### Usage
 
-####Using the directive to display the data
+Check the demo folder (demo/index.html) for a simple example.
 
-```
-<json-explorer json-data="{{data}}"></json-explorer>
-```
+### Using the directive to display the data (you can use either "json-data" or "data")
 
-#####Using the directive to display the data from a URL
-
-```
-<json-explorer json-url="http://myurl.com"></json-explorer>
-```
-####Using the collapsed attribute
-
-```
-<json-explorer json-data="{{data}}" collapsed="true"></json-explorer>
+```html
+<json-explorer json-data="data"></json-explorer>
+<json-explorer data="data"></json-explorer>
 ```
 
-####Using the order-by attribute (beta)
+### Using the directive to display the data from a URL
 
+```html
+<json-explorer url="http://myurl.com"></json-explorer>
 ```
-<json-explorer json-data="{{data}}" order-by="price:asc"></json-explorer>
-<json-explorer json-data="{{data}}" order-by="price:desc"></json-explorer>
+
+### Using the collapsed attribute
+
+```html
+<json-explorer json-data="data" collapsed="true"></json-explorer>
+<json-explorer data="data" collapsed="true"></json-explorer>
+```
+### Using the directive to display the data
+
+```html
+<json-explorer json-data="data"></json-explorer>
+<json-explorer data="data"></json-explorer>
+```
+
+### Using the directive to display the data from a URL
+
+```html
+<json-explorer url="http://myurl.com"></json-explorer>
+```
+### Using the collapsed attribute
+
+```html
+<json-explorer json-data="data" collapsed="true"></json-explorer>
+<json-explorer data="data" collapsed="true"></json-explorer>
 ```

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="libs/angular/angular.js"></script>
+		<script src="angular-json-explorer.min.js"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="angular-json-explorer.min.css" />
+		<script>
+			angular
+			.module('demo', ['ngJsonExplorer'])
+			.controller('DemoCtrl', ['$scope', function ($scope) {
+				$scope.url = 'data.js';
+				$scope.http = {
+					method: 'GET',
+					url: 'data.js',
+					headers: {
+						'X-Custom-Header': 'my custom header'
+					}
+				};
+				$scope.collapsed = true;
+				$scope.toggle = function() {
+					$scope.collapsed = !$scope.collapsed;
+				};
+				$scope.json = {
+					'name': 'Json Explorer',
+					'qty': 10,
+					'has_data': true,
+					'null_data': null,
+					'arr': [
+						10,
+						'str',
+						{
+							'nested': 'object'
+						}
+					],
+					'obj': {
+						'hello': 'world'
+					}
+				};
+				$scope.json2 = $scope.json;
+			}]);
+		</script>
+	</head>
+	<body ng-app="demo">
+		<div ng-controller="DemoCtrl">
+			<json-explorer data="json"></json-explorer>
+			<hr />
+			<json-explorer url="url"></json-explorer>
+			<hr />
+			<json-explorer url="http"></json-explorer>
+			<hr />
+			<a href ng-click="toggle()">toggle</a>
+			<json-explorer json-data="json2" collapsed="collapsed"></json-explorer>
+		</div>
+	</body>
+</html>
