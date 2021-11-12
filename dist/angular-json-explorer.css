@@ -43,7 +43,7 @@
 }
 
 .angular-json-explorer .error {
-	-moz-border-radius: 8px;
+	border-radius: 8px;
 	border: 1px solid #970000;
 	background-color: #F7E8E8;
 	margin: .5em;
